@@ -69,6 +69,7 @@ Agile: Select Principles
 - Deliver working software frequently...with a preference [for a] shorter timescale.
 - Working software is the primary measure of progress.
 - Continuous attention to technical excellence and good design enhances agility.
+- The entire process needs to be sustainable over time.
 
 (Source: http://agilemanifesto.org/principles.html)
 
@@ -76,56 +77,48 @@ Agile: Select Principles
 Boil it Down
 ==========================
 
-* Early & Continuous delivery, changing requirements, flexibility, agility: responding to change
-* Excellence, working software, valuable software: ship software that you are confident works
+We need to be able to continuously and sustainably:
 
+* Respond to change: early & continuous delivery, changing requirements, flexibility, agility
+* Ship working software with confidence: Excellence, working software, valuable software
 
 Software You Are Confident Works!
 =================================
-
-.. rst-class:: build
 
 * How can you be sure that your software works?
 * You have to TEST IT!!!
 * But who tests it?  And how?
 
-No Automated Tests
-=============================
+How are we doing?
+==========================
 
-* It becomes increasingly difficult to do comprehensive regression testing over time.
-* Diminishing returns affect both quality and velocity.
-* Your testing is an expense.
+* Any objections or concerns so far?
+* Do we have a good feel for what Agile means for a software team?
 
-Issue #1: Non-Automated Tests
-=============================
+Test Types Overview
+===================
 
-.. image:: _static/increasing-regression-tests.png
-   :class: fullpic
+* unit tests: isolate to function or method
+* integration tests: multiple components
+* functional tests: from the perspective of a browser/client
+* browser tests: functional but using Selenium
+* sytem tests: infrastructure dependent testing
+* qa testing: let a human break it
 
-Waterfall
-=========
-
-.. image:: _static/waterfall_release_process.svg
-   :class: fullpic
-
-Agile
-=========
-
-.. image:: _static/agile_release_train.svg
-  :class: fullpic
+Your definitions may differ.
 
 
-Manual/Separate Testing
-=======================
+Audience Survey
+===============
 
-.. image:: _static/hybrid_release_process.svg
-    :class: fullpic
-    :width: 80%
+.. rst-class:: build
 
-The tight feedback loop is missing.
-
-
-
+* Are you or your team testing your code?
+* Are using automated tests?
+* Have a build pipeline that integrates testing?
+* Reasons for not using automated tests?
+* What makes code "untestable"?
+* What do you think of TDD?
 
 Practice What You Preach
 ============================
@@ -144,23 +137,91 @@ Practice What You Preach
 
 Release interval: whenever (multiple times per day if needed)
 
-Let's Talk
-==========
 
-- Guiding principles vs implementation
-- Hopefully leaving time for discussion & feedback
+Agile Workflows Require Automated Testing
+=========================================
 
-Audience Survey
-===============
+Without heavy use of automated testing, a true agile workflow is unsustainable.
+
+
+Reasons
+=============================
+
+* It becomes increasingly difficult to do comprehensive regression testing over time.
+* Diminishing returns affect both quality and velocity.
+* Pushing all testing to a QA team creates a non-agile silo.
+
+
+Regression Testing Unsustainable
+================================
+
+.. image:: _static/increasing-regression-tests.png
+   :class: fullpic
+
+
+Diminishing Returns
+===============================
+
+.. image:: _static/roi-graph.png
+  :class: fullpic
+
+
+Manual Testing is Unsustainable
+===============================
+
+.. image:: _static/pisa.jpg
+  :class: fullpic
+
+Waterfall
+=========
+
+.. image:: _static/waterfall_release_process.svg
+   :class: fullpic
+
+Agile
+=========
+
+.. image:: _static/agile_release_train.svg
+  :class: fullpic
+
+
+QA Dependent Testing
+=======================
+
+.. image:: _static/hybrid_release_process.svg
+    :class: fullpic
+    :width: 80%
+
+The tight feedback loop is missing.
+
+
+Agile Developers Need to Write Tests
+====================================
+
+If developers are not creating automated tests in parallel with the production code, a true
+agile workflow is unsustainable.
+
+
+Reasons
+=============================
+
+* Sustainability: Developers are already testing, but that effort is an expense rather than asset or investment.
+
+Expense vs Asset
+================
+
+.. image:: _static/increasing-regression-tests.png
+   :class: fullpic
+
+
+Reasons
+=============================
+
+* Sustainability: Developers are already testing, but that effort is an expense rather than asset or investment.
 
 .. rst-class:: build
 
-* Are testing your code?
-* Are using automated tests?
-* Have a build pipeline that integrates testing?
-* Reasons for not using automated tests?
-* What makes code "untestable"?
-* What do you think of TDD?
+* Velocity: It saves time in the long run.
 
 I Don't Need No Stink'n Tests
 ==============================
@@ -176,28 +237,30 @@ I Don't...Need....ummm...help?
    :class: fullpic
 
 
-Test Types Overview
-===================
+Time Savings Overall
+===============================
 
-* unit tests: isolate
-* integration tests: multiple components
-* functional tests: end to end testing
-* acceptance tests: alias for functional tests?
-* sytem tests: infrastructure dependent testing
-* qa tests: let a human break it
+.. image:: _static/roi-graph.png
+   :class: fullpic
 
-Your definitions may differ.
+Reasons
+========
+
+* Sustainability: Developers are already testing, but that effort is an expense rather than asset or investment.
+* Velocity: It saves time in the long run.
+
+.. rst-class:: build
+
+* Velocity: Automated tests are code and developers are the most skilled workers when it comes to coding.
+* Velocity/quality: Fixing bugs is much easier when they are caught early.
+* Quality: Unit and intetgration tests ensure confidence when refactoring.
 
 
-Other Test Terms
-================
+The Place for QA
+=============================
 
-* Bahavior Driven Development (BDD):
-
-    * acceptance/functional testing
-    * often uses Gherkin, a business readable DSL for writing executable specifications
-
-* Test Driven Development (TDD): write tests before code
+* QA should work on thinking from a human's perspective.  Developers often have "creator bias."
+* QA should focus on testing that is hard to automate (usability, aesthetics, etc.).
 
 
 Where To Begin?
@@ -249,45 +312,12 @@ A Final Plea
 * Good tests will lead to better code & greater confidence.
 
 
-You Can't Afford Not To
-===============================
-
-.. image:: _static/roi-graph.png
-   :class: fullpic
-
-
-No Automated Tests? Your World
-===============================
-
-.. image:: _static/pisa.jpg
-   :class: fullpic
-
-
-Dealing with Objectors
-======================
-
-* It's a culture issue, use language or metrics that resonate
-* Look for a kindred spirit
-* Become an evangelist
-* Ignore them (if possible)
-* Just start doing it, demonstrate the value
-* Sacrifice some of your own time
-* Consider finding a new job
-
-
 Tip #1: Easy Stuff First
 ========================
 
 * Remember this is an investment, how much capital do you have?
 * Focus on unit or functional testing, whichever makes the most sense.
 * Avoid areas of the code that are harder to test (initially).
-
-
-Tip #1: Easy Stuff First
-========================
-
-.. image:: _static/roi-graph.png
-   :class: fullpic
 
 
 Tip #2: Make Code Easier to Test
@@ -402,7 +432,7 @@ Don't get bogged down by the chaos, just start and then increase little by littl
 Tip #5: Failing Tests Are Never OK!
 ===================================
 
-* Never commit (or accept a PR) if tests are failing
+* Never commit or accept a PR if tests are failing
 * Skips can be used when needed
 * Failed CI builds should email, post to Slack, etc.
 
@@ -412,9 +442,8 @@ Tip #6: Test Runs Should Be Fast
 
 * Fast code/test cycles are key
 * Don't do premature optimization
-* Make improvements where needed (cookie story)
+* Make improvements where needed
 * Know your test runner, work inside out
-* Eventually depend on CI for a full test run
 
 
 Tip #7: Know What You are [Not] Testing

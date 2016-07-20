@@ -110,53 +110,60 @@ valuable software.</li>
 <li>Deliver working software frequently...with a preference [for a] shorter timescale.</li>
 <li>Working software is the primary measure of progress.</li>
 <li>Continuous attention to technical excellence and good design enhances agility.</li>
+<li>The entire process needs to be sustainable over time.</li>
 </ul>
 <p>(Source: <a class="reference external" href="http://agilemanifesto.org/principles.html">http://agilemanifesto.org/principles.html</a>)</p>
 
 </article>
 <article class="slide level-2" id="boil-it-down">
 <h2>Boil it Down</h2>
+<p>We need to be able to continuously and sustainably:</p>
 <ul class="simple">
-<li>Early &amp; Continuous delivery, changing requirements, flexibility, agility: responding to change</li>
-<li>Excellence, working software, valuable software: ship software that you are confident works</li>
+<li>Respond to change: early &amp; continuous delivery, changing requirements, flexibility, agility</li>
+<li>Ship working software with confidence: Excellence, working software, valuable software</li>
 </ul>
 
 </article>
 <article class="slide level-2" id="software-you-are-confident-works">
 <h2>Software You Are Confident Works!</h2>
-<ul class="build simple">
+<ul class="simple">
 <li>How can you be sure that your software works?</li>
 <li>You have to TEST IT!!!</li>
 <li>But who tests it?  And how?</li>
 </ul>
 
 </article>
-<article class="slide level-2" id="no-automated-tests">
-<h2>No Automated Tests</h2>
+<article class="slide level-2" id="how-are-we-doing">
+<h2>How are we doing?</h2>
 <ul class="simple">
-<li>It becomes increasingly difficult to do comprehensive regression testing over time.</li>
-<li>Diminishing returns affect both quality and velocity.</li>
-<li>Your testing is an expense.</li>
+<li>Any objections or concerns so far?</li>
+<li>Do we have a good feel for what Agile means for a software team?</li>
 </ul>
 
 </article>
-<article class="slide level-2" id="issue-1-non-automated-tests">
-<h2>Issue #1: Non-Automated Tests</h2>
-<img alt="_images/increasing-regression-tests.png" class="fullpic" src="_images/increasing-regression-tests.png" />
+<article class="slide level-2" id="test-types-overview">
+<h2>Test Types Overview</h2>
+<ul class="simple">
+<li>unit tests: isolate to function or method</li>
+<li>integration tests: multiple components</li>
+<li>functional tests: from the perspective of a browser/client</li>
+<li>browser tests: functional but using Selenium</li>
+<li>sytem tests: infrastructure dependent testing</li>
+<li>qa testing: let a human break it</li>
+</ul>
+<p>Your definitions may differ.</p>
 
 </article>
-<article class="slide level-2" id="waterfall">
-<h2>Waterfall</h2>
-<img class="fullpic" src="_images/waterfall_release_process.svg" />
-</article>
-<article class="slide level-2" id="agile">
-<h2>Agile</h2>
-<img class="fullpic" src="_images/agile_release_train.svg" />
-</article>
-<article class="slide level-2" id="manual-separate-testing">
-<h2>Manual/Separate Testing</h2>
-<a class="fullpic reference internal image-reference" href="_images/hybrid_release_process.svg"><img class="fullpic" src="_images/hybrid_release_process.svg" width="80%" /></a>
-<p>The tight feedback loop is missing.</p>
+<article class="slide level-2" id="audience-survey">
+<h2>Audience Survey</h2>
+<ul class="build simple">
+<li>Are you or your team testing your code?</li>
+<li>Are using automated tests?</li>
+<li>Have a build pipeline that integrates testing?</li>
+<li>Reasons for not using automated tests?</li>
+<li>What makes code &quot;untestable&quot;?</li>
+<li>What do you think of TDD?</li>
+</ul>
 
 </article>
 <article class="slide level-2" id="practice-what-you-preach">
@@ -211,23 +218,74 @@ valuable software.</li>
 <p>Release interval: whenever (multiple times per day if needed)</p>
 
 </article>
-<article class="slide level-2" id="let-s-talk">
-<h2>Let's Talk</h2>
+<article class="slide level-2" id="agile-workflows-require-automated-testing">
+<h2>Agile Workflows Require Automated Testing</h2>
+<p>Without heavy use of automated testing, a true agile workflow is unsustainable.</p>
+
+</article>
+<article class="slide level-2" id="reasons">
+<h2>Reasons</h2>
 <ul class="simple">
-<li>Guiding principles vs implementation</li>
-<li>Hopefully leaving time for discussion &amp; feedback</li>
+<li>It becomes increasingly difficult to do comprehensive regression testing over time.</li>
+<li>Diminishing returns affect both quality and velocity.</li>
+<li>Pushing all testing to a QA team creates a non-agile silo.</li>
 </ul>
 
 </article>
-<article class="slide level-2" id="audience-survey">
-<h2>Audience Survey</h2>
+<article class="slide level-2" id="regression-testing-unsustainable">
+<h2>Regression Testing Unsustainable</h2>
+<img alt="_images/increasing-regression-tests.png" class="fullpic" src="_images/increasing-regression-tests.png" />
+
+</article>
+<article class="slide level-2" id="diminishing-returns">
+<h2>Diminishing Returns</h2>
+<img alt="_images/roi-graph.png" class="fullpic" src="_images/roi-graph.png" />
+
+</article>
+<article class="slide level-2" id="manual-testing-is-unsustainable">
+<h2>Manual Testing is Unsustainable</h2>
+<img alt="_images/pisa.jpg" class="fullpic" src="_images/pisa.jpg" />
+
+</article>
+<article class="slide level-2" id="waterfall">
+<h2>Waterfall</h2>
+<img class="fullpic" src="_images/waterfall_release_process.svg" />
+</article>
+<article class="slide level-2" id="agile">
+<h2>Agile</h2>
+<img class="fullpic" src="_images/agile_release_train.svg" />
+</article>
+<article class="slide level-2" id="qa-dependent-testing">
+<h2>QA Dependent Testing</h2>
+<a class="fullpic reference internal image-reference" href="_images/hybrid_release_process.svg"><img class="fullpic" src="_images/hybrid_release_process.svg" width="80%" /></a>
+<p>The tight feedback loop is missing.</p>
+
+</article>
+<article class="slide level-2" id="agile-developers-need-to-write-tests">
+<h2>Agile Developers Need to Write Tests</h2>
+<p>If developers are not creating automated tests in parallel with the production code, a true
+agile workflow is unsustainable.</p>
+
+</article>
+<article class="slide level-2" id="id1">
+<h2>Reasons</h2>
+<ul class="simple">
+<li>Sustainability: Developers are already testing, but that effort is an expense rather than asset or investment.</li>
+</ul>
+
+</article>
+<article class="slide level-2" id="expense-vs-asset">
+<h2>Expense vs Asset</h2>
+<img alt="_images/increasing-regression-tests.png" class="fullpic" src="_images/increasing-regression-tests.png" />
+
+</article>
+<article class="slide level-2" id="id2">
+<h2>Reasons</h2>
+<ul class="simple">
+<li>Sustainability: Developers are already testing, but that effort is an expense rather than asset or investment.</li>
+</ul>
 <ul class="build simple">
-<li>Are testing your code?</li>
-<li>Are using automated tests?</li>
-<li>Have a build pipeline that integrates testing?</li>
-<li>Reasons for not using automated tests?</li>
-<li>What makes code &quot;untestable&quot;?</li>
-<li>What do you think of TDD?</li>
+<li>Velocity: It saves time in the long run.</li>
 </ul>
 
 </article>
@@ -241,32 +299,29 @@ valuable software.</li>
 <img alt="_images/complex-form.jpeg" class="fullpic" src="_images/complex-form.jpeg" />
 
 </article>
-<article class="slide level-2" id="test-types-overview">
-<h2>Test Types Overview</h2>
-<ul class="simple">
-<li>unit tests: isolate</li>
-<li>integration tests: multiple components</li>
-<li>functional tests: end to end testing</li>
-<li>acceptance tests: alias for functional tests?</li>
-<li>sytem tests: infrastructure dependent testing</li>
-<li>qa tests: let a human break it</li>
-</ul>
-<p>Your definitions may differ.</p>
+<article class="slide level-2" id="time-savings-overall">
+<h2>Time Savings Overall</h2>
+<img alt="_images/roi-graph.png" class="fullpic" src="_images/roi-graph.png" />
 
 </article>
-<article class="slide level-2" id="other-test-terms">
-<h2>Other Test Terms</h2>
-<ul>
-<li><p class="first">Bahavior Driven Development (BDD):</p>
-<blockquote>
-<div><ul class="simple">
-<li>acceptance/functional testing</li>
-<li>often uses Gherkin, a business readable DSL for writing executable specifications</li>
+<article class="slide level-2" id="id3">
+<h2>Reasons</h2>
+<ul class="simple">
+<li>Sustainability: Developers are already testing, but that effort is an expense rather than asset or investment.</li>
+<li>Velocity: It saves time in the long run.</li>
 </ul>
-</div></blockquote>
-</li>
-<li><p class="first">Test Driven Development (TDD): write tests before code</p>
-</li>
+<ul class="build simple">
+<li>Velocity: Automated tests are code and developers are the most skilled workers when it comes to coding.</li>
+<li>Velocity/quality: Fixing bugs is much easier when they are caught early.</li>
+<li>Quality: Unit and intetgration tests ensure confidence when refactoring.</li>
+</ul>
+
+</article>
+<article class="slide level-2" id="the-place-for-qa">
+<h2>The Place for QA</h2>
+<ul class="simple">
+<li>QA should work on thinking from a human's perspective.  Developers often have &quot;creator bias.&quot;</li>
+<li>QA should focus on testing that is hard to automate (usability, aesthetics, etc.).</li>
 </ul>
 
 </article>
@@ -324,29 +379,6 @@ valuable software.</li>
 </ul>
 
 </article>
-<article class="slide level-2" id="you-can-t-afford-not-to">
-<h2>You Can't Afford Not To</h2>
-<img alt="_images/roi-graph.png" class="fullpic" src="_images/roi-graph.png" />
-
-</article>
-<article class="slide level-2" id="no-automated-tests-your-world">
-<h2>No Automated Tests? Your World</h2>
-<img alt="_images/pisa.jpg" class="fullpic" src="_images/pisa.jpg" />
-
-</article>
-<article class="slide level-2" id="dealing-with-objectors">
-<h2>Dealing with Objectors</h2>
-<ul class="simple">
-<li>It's a culture issue, use language or metrics that resonate</li>
-<li>Look for a kindred spirit</li>
-<li>Become an evangelist</li>
-<li>Ignore them (if possible)</li>
-<li>Just start doing it, demonstrate the value</li>
-<li>Sacrifice some of your own time</li>
-<li>Consider finding a new job</li>
-</ul>
-
-</article>
 <article class="slide level-2" id="tip-1-easy-stuff-first">
 <h2>Tip #1: Easy Stuff First</h2>
 <ul class="simple">
@@ -354,11 +386,6 @@ valuable software.</li>
 <li>Focus on unit or functional testing, whichever makes the most sense.</li>
 <li>Avoid areas of the code that are harder to test (initially).</li>
 </ul>
-
-</article>
-<article class="slide level-2" id="id1">
-<h2>Tip #1: Easy Stuff First</h2>
-<img alt="_images/roi-graph.png" class="fullpic" src="_images/roi-graph.png" />
 
 </article>
 <article class="slide level-2" id="tip-2-make-code-easier-to-test">
@@ -387,7 +414,7 @@ valuable software.</li>
 </div>
 
 </article>
-<article class="slide level-2" id="id2">
+<article class="slide level-2" id="id4">
 <h2>Code Testability Example</h2>
 <div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">get_project_bandwidth</span><span class="p">(</span><span class="n">project_name</span><span class="p">):</span>
     <span class="n">url</span> <span class="o">=</span> <span class="s">&#39;https://pypi.python.org/pypi/{0}/json&#39;</span> \
@@ -406,7 +433,7 @@ valuable software.</li>
 </div>
 
 </article>
-<article class="slide level-2" id="id3">
+<article class="slide level-2" id="id5">
 <h2>Code Testability Example</h2>
 <div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">get_project_bandwidth</span><span class="p">(</span><span class="n">project_name</span><span class="p">):</span>
     <span class="n">url</span> <span class="o">=</span> <span class="s">&#39;https://pypi.python.org/pypi/{0}/json&#39;</span> \
@@ -439,7 +466,7 @@ valuable software.</li>
 <p>Huge confidence booster!</p>
 
 </article>
-<article class="slide level-2" id="id4">
+<article class="slide level-2" id="id6">
 <h2>Tip #3: Easy Test Runs</h2>
 <ul class="simple">
 <li>Our applications are portable</li>
@@ -465,7 +492,7 @@ coverage by writing more test cases. Even if the increase is small, it is still 
 <article class="slide level-2" id="tip-5-failing-tests-are-never-ok">
 <h2>Tip #5: Failing Tests Are Never OK!</h2>
 <ul class="simple">
-<li>Never commit (or accept a PR) if tests are failing</li>
+<li>Never commit or accept a PR if tests are failing</li>
 <li>Skips can be used when needed</li>
 <li>Failed CI builds should email, post to Slack, etc.</li>
 </ul>
@@ -476,9 +503,8 @@ coverage by writing more test cases. Even if the increase is small, it is still 
 <ul class="simple">
 <li>Fast code/test cycles are key</li>
 <li>Don't do premature optimization</li>
-<li>Make improvements where needed (cookie story)</li>
+<li>Make improvements where needed</li>
 <li>Know your test runner, work inside out</li>
-<li>Eventually depend on CI for a full test run</li>
 </ul>
 
 </article>
@@ -501,7 +527,7 @@ coverage by writing more test cases. Even if the increase is small, it is still 
 <img alt="_images/codecov-summary.png" class="fullpic" src="_images/codecov-summary.png" />
 
 </article>
-<article class="slide level-2" id="id5">
+<article class="slide level-2" id="id7">
 <h2>Tip #8: Use Code Coverage Tools</h2>
 <img alt="_images/gh-codecov-comment.png" class="fullpic" src="_images/gh-codecov-comment.png" />
 
