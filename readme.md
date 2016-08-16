@@ -1,9 +1,9 @@
 Automated Testing & Agile Workflows: Asset or Liability?
 ========================================================
 
-The slides for my presentation at [The Louisville Agile Forum on July 20th, 2016][event].
+The slides for my presentation to and discussion with the team at [Jefferson National][event].
 
-[event]: http://www.meetup.com/Louisville-Agile-Forum/events/231741799/
+[event]: https://www.jeffnat.com/
 
 Summary
 -------
@@ -13,7 +13,6 @@ We'll take a close look at the relationship between agile workflows and automate
 Slide Viewer
 ------------
 
-To view the slides, visit:
-[Automated Testing & Agile Workflows: Asset or Liability? (slides) by Randy Syring][slides]
+The slides are available for [online viewing][slides].
 
-[slides]: https://cdn.rawgit.com/rsyring/automated-testing-and-agile-workflows/master/_build/slides/index.html
+[slides]: https://cdn.rawgit.com/rsyring/2016-08-jeffnat-agile-testing/master/_build/slides/index.html

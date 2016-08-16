@@ -12,7 +12,7 @@ Asset or Liability?
 | https://github.com/rsyring/
 
 .. epigraph::
-    Relentless. Software. Craftsmanship.
+    Impassioned. Software. Craftsmanship.
 
 .. image:: _static/level12-logo.png
 
@@ -24,30 +24,67 @@ Introduction
 
 I'm the Chief Executive Developer at `Level 12 <https://www.level12.io/>`_.
 
-Level 12 is a web & database development firm that uses:
+Level 12 is software development firm specializing in web and
+data(base) projects tailor made for our customers.
 
-- solid engineering,
-- proactive communication, and
-- modern development practices
+Agile methodologies make our customers happy...really, really, happy.
 
-to make our customers **really, really, happy.**
+Why should you care?
 
-Why it Matters to You
-=====================
+This Presentation
+=================
 
-- Level 12 ... uses... **modern development practices**
-- to make **our customers** really, really, happy
+* My Journey
+* Agile review
+* Agile & automated testing
+* Testing: Where to Begin
+* Testing: 10 tips (if we have time)
 
-Net result: this works and is maintainable in the "real world"
+Will This Help You?
+====================
 
-Well, my "real world", YMMV
+- It has helped me
+- It has helped lots of others
+- These are "Best Practices"
+- It's very likely it can help you
+
+
+It's Worth It!
+====================
+
+Technology fatigue is real, but this is worth it!
+
+(P.S. I'm a slow adopter)
+
+
+My Journey
 ============================
 
-- Methods & concepts refined over last 7 years
-- Primarily involved in web development (11 years)
-- Not operating *"at scale"*
-- Your context may differ
-- Industry proven and advocated methods
+- Started developing web apps FT in 2004
+- Exposed to automated testing in PHP late 2006
+- Moved to Python & intentional testing model in late 2008
+- Adopted a Test Centric model during 2009/2010 (some resistance)
+- More robust dev model including CI in last 18 months
+- Was practicing Agile "naturally" before I had a label for it
+
+
+I Practice What I Preach
+============================
+.. csv-table::
+   :header: "", "Proj A", "Proj B"
+   :widths: 35, 35, 35
+
+   "Age", "6+ years", 1.5 years
+   "Python Tests", "8,294", "1,444"
+   "JS Tests", 309, 0
+   "DB Tables", 200+, 35+
+   "Python LoC", "145K", "26.5K"
+   "Python Test LoC", "61K (42%)", "14.7K (55%)"
+   "Code Coverage", 95%, 96%
+   "Test Time", 39:04, 6:58
+
+Release interval: whenever (multiple times per day if needed)
+
 
 Agile: Let's Review
 ==========================
@@ -74,29 +111,44 @@ Agile: Select Principles
 (Source: http://agilemanifesto.org/principles.html)
 
 
-Boil it Down
-==========================
+Agile Essentials
+================
 
-We need to be able to continuously and sustainably:
+A software development process that is:
 
-* Respond to change: early & continuous delivery, changing requirements, flexibility, agility
-* Ship working software with confidence: Excellence, working software, valuable software
+* Dynamic: change is welcomed with minimal friction
+* High velocity: short iterations & frequent delivery (days/weeks)
+* Excellent: predictably high quality
 
-Software You Are Confident Works!
-=================================
-
-* How can you be sure that your software works?
-* You have to TEST IT!!!
-* But who tests it?  And how?
 
 How are we doing?
 ==========================
 
 * Any objections or concerns so far?
 * Do we have a good feel for what Agile means for a software team?
+* Is this ideal?
 
-Test Types Overview
-===================
+
+The Challenge
+===============
+
+What's the challenge of a software process that is committed to
+each of these?
+
+* Dynamic: change is welcomed with minimal friction
+* High velocity: short iterations & frequent delivery (days/weeks)
+* Excellent: predictably high quality
+
+
+The Solution: Automation
+========================
+
+Without heavy use of automated processes, especially testing,
+a true Agile workflow is unsustainable.
+
+
+Preamble: Test Types
+=============================
 
 * unit tests: isolate to function or method
 * integration tests: multiple components
@@ -108,48 +160,14 @@ Test Types Overview
 Your definitions may differ.
 
 
-Audience Survey
-===============
-
-.. rst-class:: build
-
-* Are you or your team testing your code?
-* Are using automated tests?
-* Have a build pipeline that integrates testing?
-* Reasons for not using automated tests?
-* What makes code "untestable"?
-* What do you think of TDD?
-
-Practice What You Preach
-============================
-.. csv-table::
-   :header: "", "Proj A", "Proj B"
-   :widths: 35, 35, 35
-
-   "Age", "6+ years", 1.5 years
-   "Python Tests", "8,294", "1,444"
-   "JS Tests", 309, 0
-   "DB Tables", 200+, 35+
-   "Python LoC", "145K", "26.5K"
-   "Python Test LoC", "61K (42%)", "14.7K (55%)"
-   "Code Coverage", 95%, 96%
-   "Test Time", 39:04, 6:58
-
-Release interval: whenever (multiple times per day if needed)
-
-
-Agile Workflows Require Automated Testing
-=========================================
-
-Without heavy use of automated testing, a true agile workflow is unsustainable.
-
-
-Reasons
+Reason
 =============================
 
-* It becomes increasingly difficult to do comprehensive regression testing over time.
-* Diminishing returns affect both quality and velocity.
-* Pushing all testing to a QA team creates a non-agile silo.
+* Quick iterations and frequent change causes bugs.
+* If you want high-quality software, you have to test for and fix bugs.
+* As code volume and complexity grows over time, it becomes impossible to
+  manually verify all functionality.
+* Without automation, quality or velocity (usually both) will suffer.
 
 
 Regression Testing Unsustainable
@@ -171,28 +189,6 @@ Manual Testing is Unsustainable
 
 .. image:: _static/pisa.jpg
   :class: fullpic
-
-Waterfall
-=========
-
-.. image:: _static/waterfall_release_process.svg
-   :class: fullpic
-
-Agile
-=========
-
-.. image:: _static/agile_release_train.svg
-  :class: fullpic
-
-
-QA Dependent Testing
-=======================
-
-.. image:: _static/hybrid_release_process.svg
-    :class: fullpic
-    :width: 80%
-
-The tight feedback loop is missing.
 
 
 Agile Developers Need to Write Tests
@@ -252,19 +248,26 @@ Reasons
 .. rst-class:: build
 
 * Velocity: Automated tests are code and developers are the most skilled workers when it comes to coding.
-* Velocity/quality: Fixing bugs is much easier when they are caught early.
-* Quality: Unit and intetgration tests ensure confidence when refactoring.
+* Velocity/quality: Fixing bugs is much easier when they are caught early.  Relying on a QA team lengthens
+  the feedback cycle.
+* Quality: Unit and integration tests ensure confidence when refactoring.
 
 
 The Place for QA
 =============================
 
 * QA should work on thinking from a human's perspective.  Developers often have "creator bias."
-* QA should focus on testing that is hard to automate (usability, aesthetics, etc.).
+* QA should focus on testing that is hard/impossible to automate (usability, aesthetics, etc.).
 
 
-Where To Begin?
-===============
+Questions
+=========
+
+How are we doing so far?  Questions/comments/concerns/objections?
+
+
+Testing: Where To Begin?
+========================
 
 * Overwhelming, confusing, etc.
 * Goal: high productivity
@@ -307,9 +310,14 @@ A Final Plea
 ============
 
 * You are already testing, capture the value!
-* Good bridges aren't built without blueprints.
-* Just get started.
-* Good tests will lead to better code & greater confidence.
+* Just get started.  An object at rest...
+* Keep at it, it will become natural
+
+
+More than a Process
+===================
+
+It's about culture.
 
 
 Tip #1: Easy Stuff First
@@ -489,6 +497,13 @@ Tip #9: Automate All The Things
 * A continuous integration (CI) environment brings great stability
 * Put this in place ASAP, it will pay dividends
 * Include as much as possible: testing, linting, complexity, code coverage
+
+
+Tip #10: Sorry
+===============================
+
+I could only think of 9, but "10 Tips" seemed more catchy!  :)
+
 
 Thanks For Attending
 ======================
