@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Automated Testing &amp; Agile Workflows &mdash; Database Testing 2015.08.01 documentation</title>
+    <title>Software Risks &amp; Rewards &mdash; Database Testing 2015.08.01 documentation</title>
     
     <link rel="stylesheet" href="_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="_static/styles.css" type="text/css" />
@@ -43,9 +43,9 @@
    class='slides layout-regular'>
 
 
-  <article class="slide level-1" id="automated-testing-agile-workflows">
-<h1>Automated Testing &amp; Agile Workflows</h1>
-<p>Asset or Liability?</p>
+  <article class="slide level-1" id="software-risks-rewards">
+<h1>Software Risks &amp; Rewards</h1>
+<p>Protecting ROI using Agile</p>
 <div class="line-block">
 <div class="line">By: Randy Syring</div>
 <div class="line">Twitter: &#64;RandySyring</div>
@@ -53,7 +53,7 @@
 <div class="line"><a class="reference external" href="https://github.com/rsyring/">https://github.com/rsyring/</a></div>
 </div>
 <blockquote class="epigraph">
-<div>Impassioned. Software. Craftsmanship.</div></blockquote>
+<div>Crafting Software to Amplify Business</div></blockquote>
 <img alt="_images/level12-logo.png" src="_images/level12-logo.png" />
 
 </article>
@@ -61,501 +61,154 @@
 <h2>Introduction</h2>
 <img alt="_images/level12-logo.png" class="align-right" src="_images/level12-logo.png" />
 <p>I'm the Chief Executive Developer at <a class="reference external" href="https://www.level12.io/">Level 12</a>.</p>
-<p>Level 12 is software development firm specializing in web and
-data(base) projects tailor made for our customers.</p>
+<p>I've been programming
+for 15 years and working directly with customers to build custom software for 12 years.</p>
+<p>Level 12 is on a mission to rid the world of chaos one software project at a time.</p>
 <p>Agile methodologies make our customers happy...really, really, happy.</p>
-<p>Why should you care?</p>
 
 </article>
-<article class="slide level-2" id="this-presentation">
-<h2>This Presentation</h2>
+<article class="slide level-2" id="waterfall-project-management">
+<h2>Waterfall Project Management</h2>
 <ul class="simple">
-<li>My Journey</li>
-<li>Agile review</li>
-<li>Agile &amp; automated testing</li>
-<li>Testing: Where to Begin</li>
-<li>Testing: 10 tips (if we have time)</li>
+<li>Waterfall: a sequential (non-iterative) process in which each phase of
+development is completed before moving on to the next.</li>
+<li>It originates in manufacturing &amp; construction industries</li>
 </ul>
 
 </article>
-<article class="slide level-2" id="will-this-help-you">
-<h2>Will This Help You?</h2>
+<article class="slide level-2" id="waterfall">
+<h2>Waterfall</h2>
+<img class="fullpic" src="_images/waterfall_release_process.svg" />
+</article>
+<article class="slide level-2" id="agile-project-management">
+<h2>Agile Project Management</h2>
 <ul class="simple">
-<li>It has helped me</li>
-<li>It has helped lots of others</li>
-<li>These are &quot;Best Practices&quot;</li>
-<li>It's very likely it can help you</li>
+<li>Agile: an incremental and iterative approach to development that values close collaboration
+and small development cycles.</li>
+<li>It originated as a response to the typical waterfall approach and high failure rate of IT projects.</li>
 </ul>
 
 </article>
-<article class="slide level-2" id="it-s-worth-it">
-<h2>It's Worth It!</h2>
-<p>Technology fatigue is real, but this is worth it!</p>
-<p>(P.S. I'm a slow adopter)</p>
-
+<article class="slide level-2" id="agile">
+<h2>Agile</h2>
+<img class="fullpic" src="_images/agile_release_train.svg" />
 </article>
-<article class="slide level-2" id="my-journey">
-<h2>My Journey</h2>
+<article class="slide level-2" id="agile-is-not-scrum">
+<h2>Agile is not Scrum</h2>
+<p>Agile is a philosophy, not a methodology. Some methodologies:</p>
 <ul class="simple">
-<li>Started developing web apps FT in 2004</li>
-<li>Exposed to automated testing in PHP late 2006</li>
-<li>Moved to Python &amp; intentional testing model in late 2008</li>
-<li>Adopted a Test Centric model during 2009/2010 (some resistance)</li>
-<li>More robust dev model including CI in last 18 months</li>
-<li>Was practicing Agile &quot;naturally&quot; before I had a label for it</li>
+<li>Scrum</li>
+<li>Extreme programming (XP)</li>
+<li>LEAN</li>
 </ul>
 
 </article>
-<article class="slide level-2" id="i-practice-what-i-preach">
-<h2>I Practice What I Preach</h2>
-<table border="1" class="docutils">
-<colgroup>
-<col width="33%" />
-<col width="33%" />
-<col width="33%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">&nbsp;</th>
-<th class="head">Proj A</th>
-<th class="head">Proj B</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td>Age</td>
-<td>6+ years</td>
-<td>1.5 years</td>
-</tr>
-<tr class="row-odd"><td>Python Tests</td>
-<td>8,294</td>
-<td>1,444</td>
-</tr>
-<tr class="row-even"><td>JS Tests</td>
-<td>309</td>
-<td>0</td>
-</tr>
-<tr class="row-odd"><td>DB Tables</td>
-<td>200+</td>
-<td>35+</td>
-</tr>
-<tr class="row-even"><td>Python LoC</td>
-<td>145K</td>
-<td>26.5K</td>
-</tr>
-<tr class="row-odd"><td>Python Test LoC</td>
-<td>61K (42%)</td>
-<td>14.7K (55%)</td>
-</tr>
-<tr class="row-even"><td>Code Coverage</td>
-<td>95%</td>
-<td>96%</td>
-</tr>
-<tr class="row-odd"><td>Test Time</td>
-<td>39:04</td>
-<td>6:58</td>
-</tr>
-</tbody>
-</table>
-<p>Release interval: whenever (multiple times per day if needed)</p>
+<article class="slide level-2" id="agile-principles-software">
+<h2>Agile Principles: Software</h2>
+<ul class="simple">
+<li>Customer satisfaction by early and continuous delivery of <strong>valuable software</strong></li>
+<li><strong>Working software</strong> is the principal measure of progress</li>
+<li>Continuous attention to <strong>technical excellence</strong> and good design</li>
+</ul>
 
 </article>
-<article class="slide level-2" id="agile-let-s-review">
-<h2>Agile: Let's Review</h2>
+<article class="slide level-2" id="agile-principles-agility">
+<h2>Agile Principles: Agility</h2>
 <ul class="simple">
-<li><strong>Individuals and interactions</strong> over processes and tools</li>
-<li><strong>Working software</strong> over comprehensive documentation</li>
-<li><strong>Customer collaboration</strong> over contract negotiation</li>
-<li><strong>Responding to change</strong> over following a plan</li>
+<li><strong>Welcome changing requirements</strong>, even in late development</li>
+<li>Working software is <strong>delivered frequently</strong> (weeks rather than months)</li>
+<li><strong>Sustainable development</strong>, able to maintain a constant pace</li>
 </ul>
-<p>(Source: <a class="reference external" href="http://agilemanifesto.org/">http://agilemanifesto.org/</a>)</p>
 
 </article>
-<article class="slide level-2" id="agile-select-principles">
-<h2>Agile: Select Principles</h2>
+<article class="slide level-2" id="agile-principles-people">
+<h2>Agile Principles: People</h2>
 <ul class="simple">
-<li>Our highest priority is to satisfy the customer through early and continuous delivery of
-valuable software.</li>
-<li>Welcome changing requirements, even late in development.</li>
-<li>Deliver working software frequently...with a preference [for a] shorter timescale.</li>
-<li>Working software is the primary measure of progress.</li>
-<li>Continuous attention to technical excellence and good design enhances agility.</li>
-<li>The entire process needs to be sustainable over time.</li>
+<li>Close, daily cooperation between business people and developers</li>
+<li>Projects are built around motivated individuals, who should be trusted</li>
+<li>Face-to-face conversation is the best form of communication (co-location)</li>
+<li>Regularly, the team reflects on how to become more effective, and adjusts accordingly</li>
+<li>Best architectures, requirements, and designs emerge from self-organizing teams</li>
 </ul>
-<p>(Source: <a class="reference external" href="http://agilemanifesto.org/principles.html">http://agilemanifesto.org/principles.html</a>)</p>
 
 </article>
 <article class="slide level-2" id="agile-essentials">
 <h2>Agile Essentials</h2>
 <p>A software development process that is:</p>
 <ul class="simple">
+<li>Collaborative: frequent and productive interaction between business and development</li>
 <li>Dynamic: change is welcomed with minimal friction</li>
 <li>High velocity: short iterations &amp; frequent delivery (days/weeks)</li>
 <li>Excellent: predictably high quality</li>
 </ul>
 
 </article>
-<article class="slide level-2" id="how-are-we-doing">
-<h2>How are we doing?</h2>
+<article class="slide level-2" id="more-than-the-sum-of-it-s-parts">
+<h2>More than the sum of it's parts</h2>
+<p>Synergy.</p>
+
+</article>
+<article class="slide level-2" id="risks-in-software-development">
+<h2>Risks in Software Development</h2>
 <ul class="simple">
-<li>Any objections or concerns so far?</li>
-<li>Do we have a good feel for what Agile means for a software team?</li>
-<li>Is this ideal?</li>
+<li>Missed Deadlines</li>
+<li>Over Budget</li>
+<li>Missing Functionality</li>
 </ul>
+<p>Anything missing?</p>
+<p>Make a guess on success/failure rate?</p>
 
 </article>
-<article class="slide level-2" id="the-challenge">
-<h2>The Challenge</h2>
-<p>What's the challenge of a software process that is committed to
-each of these?</p>
+<article class="slide level-2" id="project-success-rate">
+<h2>Project Success Rate</h2>
 <ul class="simple">
-<li>Dynamic: change is welcomed with minimal friction</li>
-<li>High velocity: short iterations &amp; frequent delivery (days/weeks)</li>
-<li>Excellent: predictably high quality</li>
+<li>39% succeed (delivered on time, on budget, and with required functionality)</li>
+<li>43% are challenged (late, over budget, and/or with fewer than the required features and functions)</li>
+<li>18% fail (canceled or never used)</li>
 </ul>
+<p>Why so low?  Digging, APIs, and file formats.</p>
 
 </article>
-<article class="slide level-2" id="the-solution-automation">
-<h2>The Solution: Automation</h2>
-<p>Without heavy use of automated processes, especially testing,
-a true Agile workflow is unsustainable.</p>
+<article class="slide level-2" id="the-agile-difference">
+<h2>The Agile Difference</h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="25%" />
+<col width="25%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">&nbsp;</th>
+<th class="head">Low Agility</th>
+<th class="head">High Agility</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Met goals/business intent</td>
+<td>56%</td>
+<td>75%</td>
+</tr>
+<tr class="row-odd"><td>Finished on time</td>
+<td>40%</td>
+<td>65%</td>
+</tr>
+<tr class="row-even"><td>Finished within budget</td>
+<td>45%</td>
+<td>67%</td>
+</tr>
+<tr class="row-odd"><td>Complete strategic initiatives</td>
+<td>45%</td>
+<td>69%</td>
+</tr>
+</tbody>
+</table>
+<p>Agile organizations grow revenue 37% faster and generate 30% higher
+profits than non-agile companies.</p>
 
 </article>
-<article class="slide level-2" id="preamble-test-types">
-<h2>Preamble: Test Types</h2>
-<ul class="simple">
-<li>unit tests: isolate to function or method</li>
-<li>integration tests: multiple components</li>
-<li>functional tests: from the perspective of a browser/client</li>
-<li>browser tests: functional but using Selenium</li>
-<li>sytem tests: infrastructure dependent testing</li>
-<li>qa testing: let a human break it</li>
-</ul>
-<p>Your definitions may differ.</p>
-
-</article>
-<article class="slide level-2" id="reason">
-<h2>Reason</h2>
-<ul class="simple">
-<li>Quick iterations and frequent change causes bugs.</li>
-<li>If you want high-quality software, you have to test for and fix bugs.</li>
-<li>As code volume and complexity grows over time, it becomes impossible to
-manually verify all functionality.</li>
-<li>Without automation, quality or velocity (usually both) will suffer.</li>
-</ul>
-
-</article>
-<article class="slide level-2" id="regression-testing-unsustainable">
-<h2>Regression Testing Unsustainable</h2>
-<img alt="_images/increasing-regression-tests.png" class="fullpic" src="_images/increasing-regression-tests.png" />
-
-</article>
-<article class="slide level-2" id="diminishing-returns">
-<h2>Diminishing Returns</h2>
-<img alt="_images/roi-graph.png" class="fullpic" src="_images/roi-graph.png" />
-
-</article>
-<article class="slide level-2" id="manual-testing-is-unsustainable">
-<h2>Manual Testing is Unsustainable</h2>
-<img alt="_images/pisa.jpg" class="fullpic" src="_images/pisa.jpg" />
-
-</article>
-<article class="slide level-2" id="agile-developers-need-to-write-tests">
-<h2>Agile Developers Need to Write Tests</h2>
-<p>If developers are not creating automated tests in parallel with the production code, a true
-agile workflow is unsustainable.</p>
-
-</article>
-<article class="slide level-2" id="reasons">
-<h2>Reasons</h2>
-<ul class="simple">
-<li>Sustainability: Developers are already testing, but that effort is an expense rather than asset or investment.</li>
-</ul>
-
-</article>
-<article class="slide level-2" id="expense-vs-asset">
-<h2>Expense vs Asset</h2>
-<img alt="_images/increasing-regression-tests.png" class="fullpic" src="_images/increasing-regression-tests.png" />
-
-</article>
-<article class="slide level-2" id="id1">
-<h2>Reasons</h2>
-<ul class="simple">
-<li>Sustainability: Developers are already testing, but that effort is an expense rather than asset or investment.</li>
-</ul>
-<ul class="build simple">
-<li>Velocity: It saves time in the long run.</li>
-</ul>
-
-</article>
-<article class="slide level-2" id="i-don-t-need-no-stink-n-tests">
-<h2>I Don't Need No Stink'n Tests</h2>
-<img alt="_images/simple-form.png" class="fullpic" src="_images/simple-form.png" />
-
-</article>
-<article class="slide level-2" id="i-don-t-need-ummm-help">
-<h2>I Don't...Need....ummm...help?</h2>
-<img alt="_images/complex-form.jpeg" class="fullpic" src="_images/complex-form.jpeg" />
-
-</article>
-<article class="slide level-2" id="time-savings-overall">
-<h2>Time Savings Overall</h2>
-<img alt="_images/roi-graph.png" class="fullpic" src="_images/roi-graph.png" />
-
-</article>
-<article class="slide level-2" id="id2">
-<h2>Reasons</h2>
-<ul class="simple">
-<li>Sustainability: Developers are already testing, but that effort is an expense rather than asset or investment.</li>
-<li>Velocity: It saves time in the long run.</li>
-</ul>
-<ul class="build simple">
-<li>Velocity: Automated tests are code and developers are the most skilled workers when it comes to coding.</li>
-<li>Velocity/quality: Fixing bugs is much easier when they are caught early.  Relying on a QA team lengthens
-the feedback cycle.</li>
-<li>Quality: Unit and integration tests ensure confidence when refactoring.</li>
-</ul>
-
-</article>
-<article class="slide level-2" id="the-place-for-qa">
-<h2>The Place for QA</h2>
-<ul class="simple">
-<li>QA should work on thinking from a human's perspective.  Developers often have &quot;creator bias.&quot;</li>
-<li>QA should focus on testing that is hard/impossible to automate (usability, aesthetics, etc.).</li>
-</ul>
-
-</article>
-<article class="slide level-2" id="questions">
-<h2>Questions</h2>
-<p>How are we doing so far?  Questions/comments/concerns/objections?</p>
-
-</article>
-<article class="slide level-2" id="testing-where-to-begin">
-<h2>Testing: Where To Begin?</h2>
-<ul class="simple">
-<li>Overwhelming, confusing, etc.</li>
-<li>Goal: high productivity</li>
-<li>Productivity vs efficiency, anyone?</li>
-</ul>
-
-</article>
-<article class="slide level-2" id="productive-testing">
-<h2>Productive Testing</h2>
-<ul class="simple">
-<li>Productive: creating or enhancing value</li>
-<li>Tests are an investment, invest wisely</li>
-<li>You are already testing, asset or expense?</li>
-</ul>
-
-</article>
-<article class="slide level-2" id="test-centric-development-tcd">
-<h2>Test Centric Development (TCD)</h2>
-<ul class="simple">
-<li>do as much productive testing as possible</li>
-<li>acknowledges that we have limited resources</li>
-<li>takes into account the 80/20 principle (93%)</li>
-<li>gives the developer flexibility</li>
-<li>recognizes different contexts have different needs</li>
-<li>when done rightly, results in significant test coverage</li>
-<li>This is not a get out of TDD jail free card!</li>
-</ul>
-
-</article>
-<article class="slide level-2" id="tcd-guiding-principles">
-<h2>TCD Guiding Principles</h2>
-<ul class="simple">
-<li>confidence and quality increase with testing</li>
-<li>developers write tests at the same time as the code</li>
-<li>default to writing tests first</li>
-<li>test core functionality as thoroughly as possible</li>
-<li>if resources limit testing, cheat less used and/or less important areas</li>
-<li>if the resources are available, test everything</li>
-<li>managers and stakeholders need to reinforce the importance of tests</li>
-</ul>
-
-</article>
-<article class="slide level-2" id="a-final-plea">
-<h2>A Final Plea</h2>
-<ul class="simple">
-<li>You are already testing, capture the value!</li>
-<li>Just get started.  An object at rest...</li>
-<li>Keep at it, it will become natural</li>
-</ul>
-
-</article>
-<article class="slide level-2" id="more-than-a-process">
-<h2>More than a Process</h2>
-<p>It's about culture.</p>
-
-</article>
-<article class="slide level-2" id="tip-1-easy-stuff-first">
-<h2>Tip #1: Easy Stuff First</h2>
-<ul class="simple">
-<li>Remember this is an investment, how much capital do you have?</li>
-<li>Focus on unit or functional testing, whichever makes the most sense.</li>
-<li>Avoid areas of the code that are harder to test (initially).</li>
-</ul>
-
-</article>
-<article class="slide level-2" id="tip-2-make-code-easier-to-test">
-<h2>Tip #2: Make Code Easier to Test</h2>
-<ul class="simple">
-<li>Testing is a first-class activity</li>
-<li>You should modify your code to make it easier to test</li>
-</ul>
-
-</article>
-<article class="slide level-2" id="code-testability-example">
-<h2>Code Testability Example</h2>
-<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">requests</span>
-
-<span class="k">def</span> <span class="nf">get_project_bandwidth</span><span class="p">(</span><span class="n">project_name</span><span class="p">):</span>
-    <span class="n">url</span> <span class="o">=</span> <span class="s">&#39;https://pypi.python.org/pypi/{0}/json&#39;</span> \
-        <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">project_name</span><span class="p">)</span>
-    <span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
-
-    <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">resp</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
-    <span class="n">total_bytes</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">for</span> <span class="n">url</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="s">&#39;urls&#39;</span><span class="p">]:</span>
-        <span class="n">total_bytes</span> <span class="o">+=</span> <span class="n">url</span><span class="p">[</span><span class="s">&#39;size&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="n">url</span><span class="p">[</span><span class="s">&#39;downloads&#39;</span><span class="p">]</span>
-    <span class="k">return</span> <span class="n">total_bytes</span>
-</pre></div>
-</div>
-
-</article>
-<article class="slide level-2" id="id3">
-<h2>Code Testability Example</h2>
-<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">get_project_bandwidth</span><span class="p">(</span><span class="n">project_name</span><span class="p">):</span>
-    <span class="n">url</span> <span class="o">=</span> <span class="s">&#39;https://pypi.python.org/pypi/{0}/json&#39;</span> \
-        <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">project_name</span><span class="p">)</span>
-    <span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
-
-    <span class="k">return</span> <span class="n">calc_urls_bandwidth</span><span class="p">(</span><span class="n">resp</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
-
-<span class="k">def</span> <span class="nf">calc_urls_bandwidth</span><span class="p">(</span><span class="n">json</span><span class="p">):</span>
-    <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">json</span><span class="p">)</span>
-    <span class="n">total_bytes</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">for</span> <span class="n">url</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="s">&#39;urls&#39;</span><span class="p">]:</span>
-        <span class="n">total_bytes</span> <span class="o">+=</span> <span class="n">url</span><span class="p">[</span><span class="s">&#39;size&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="n">url</span><span class="p">[</span><span class="s">&#39;downloads&#39;</span><span class="p">]</span>
-    <span class="k">return</span> <span class="n">total_bytes</span>
-</pre></div>
-</div>
-
-</article>
-<article class="slide level-2" id="id4">
-<h2>Code Testability Example</h2>
-<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">get_project_bandwidth</span><span class="p">(</span><span class="n">project_name</span><span class="p">):</span>
-    <span class="n">url</span> <span class="o">=</span> <span class="s">&#39;https://pypi.python.org/pypi/{0}/json&#39;</span> \
-        <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">project_name</span><span class="p">)</span>
-    <span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
-
-    <span class="k">return</span> <span class="n">calc_urls_bandwidth</span><span class="p">(</span><span class="n">resp</span><span class="o">.</span><span class="n">json</span><span class="p">)</span>
-
-<span class="k">def</span> <span class="nf">calc_urls_bandwidth</span><span class="p">(</span><span class="n">project_data</span><span class="p">):</span>
-    <span class="n">total_bytes</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">for</span> <span class="n">url</span> <span class="ow">in</span> <span class="n">project_data</span><span class="p">[</span><span class="s">&#39;urls&#39;</span><span class="p">]:</span>
-        <span class="n">total_bytes</span> <span class="o">+=</span> <span class="n">url</span><span class="p">[</span><span class="s">&#39;size&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="n">url</span><span class="p">[</span><span class="s">&#39;downloads&#39;</span><span class="p">]</span>
-    <span class="k">return</span> <span class="n">total_bytes</span>
-</pre></div>
-</div>
-
-</article>
-<article class="slide level-2" id="tip-3-easy-test-runs">
-<h2>Tip #3: Easy Test Runs</h2>
-<p>Can't emphasize this enough, make it easy for people to run your tests!</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>git clone https://github.com/rsyring/bookorders example
-<span class="nv">$ </span><span class="nb">cd </span>example/
-<span class="nv">$ </span>tox
-<span class="o">[</span>...snip...<span class="o">]</span>
-  py34: commands succeeded
-  flake8: commands succeeded
-  congratulations :<span class="o">)</span>
-</pre></div>
-</div>
-<p>Huge confidence booster!</p>
-
-</article>
-<article class="slide level-2" id="id5">
-<h2>Tip #3: Easy Test Runs</h2>
-<ul class="simple">
-<li>Our applications are portable</li>
-<li>We use a wheelhouse for dependencies.</li>
-<li>We can make some assumptions about the environment.</li>
-<li>Deviations are noted in the Readme</li>
-<li>Inability to run tests this way is a BUG!!</li>
-<li>Enforced by our CI environment</li>
-</ul>
-<p>What are the challenges to doing this in your context?</p>
-
-</article>
-<article class="slide level-2" id="tip-4-eat-the-elephant">
-<h2>Tip #4: Eat the Elephant</h2>
-<p>Focus on constant incremental improvements.</p>
-<blockquote>
-<div>We have one simple rule: 'just increase code coverage by 1%'. We are constantly increasing code
-coverage by writing more test cases. Even if the increase is small, it is still a good thing to do.</div></blockquote>
-<p>Credit: <a class="reference external" href="http://jodd.org/beta.html">http://jodd.org/beta.html</a></p>
-<p>Don't get bogged down by the chaos, just start and then increase little by little.</p>
-
-</article>
-<article class="slide level-2" id="tip-5-failing-tests-are-never-ok">
-<h2>Tip #5: Failing Tests Are Never OK!</h2>
-<ul class="simple">
-<li>Never commit or accept a PR if tests are failing</li>
-<li>Skips can be used when needed</li>
-<li>Failed CI builds should email, post to Slack, etc.</li>
-</ul>
-
-</article>
-<article class="slide level-2" id="tip-6-test-runs-should-be-fast">
-<h2>Tip #6: Test Runs Should Be Fast</h2>
-<ul class="simple">
-<li>Fast code/test cycles are key</li>
-<li>Don't do premature optimization</li>
-<li>Make improvements where needed</li>
-<li>Know your test runner, work inside out</li>
-</ul>
-
-</article>
-<article class="slide level-2" id="tip-7-know-what-you-are-not-testing">
-<h2>Tip #7: Know What You are [Not] Testing</h2>
-<p>Ask yourself regularily what you are trying to test</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">contact_form</span><span class="p">(</span><span class="n">post_args</span><span class="p">):</span>
-    <span class="n">form</span> <span class="o">=</span> <span class="n">SomeForm</span><span class="p">(</span><span class="n">post_args</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">form</span><span class="o">.</span><span class="n">is_completed</span><span class="p">():</span>
-        <span class="n">send_contact_email</span><span class="p">(</span><span class="n">post_args</span><span class="p">[</span><span class="s">&#39;name&#39;</span><span class="p">],</span>
-            <span class="n">post_args</span><span class="p">[</span><span class="s">&#39;email&#39;</span><span class="p">],</span> <span class="n">post_args</span><span class="p">[</span><span class="s">&#39;body&#39;</span><span class="p">])</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">form</span><span class="o">.</span><span class="n">to_html</span><span class="p">())</span>
-</pre></div>
-</div>
-
-</article>
-<article class="slide level-2" id="tip-8-use-code-coverage-tools">
-<h2>Tip #8: Use Code Coverage Tools</h2>
-<img alt="_images/codecov-summary.png" class="fullpic" src="_images/codecov-summary.png" />
-
-</article>
-<article class="slide level-2" id="id6">
-<h2>Tip #8: Use Code Coverage Tools</h2>
-<img alt="_images/gh-codecov-comment.png" class="fullpic" src="_images/gh-codecov-comment.png" />
-
-</article>
-<article class="slide level-2" id="tip-9">
-<h2>Tip #9:</h2>
-<img alt="_images/meme.jpg" class="fullpic" src="_images/meme.jpg" />
-
-</article>
-<article class="slide level-2" id="tip-9-automate-all-the-things">
-<h2>Tip #9: Automate All The Things</h2>
-<ul class="simple">
-<li>A continuous integration (CI) environment brings great stability</li>
-<li>Put this in place ASAP, it will pay dividends</li>
-<li>Include as much as possible: testing, linting, complexity, code coverage</li>
-</ul>
-
-</article>
-<article class="slide level-2" id="tip-10-sorry">
-<h2>Tip #10: Sorry</h2>
-<p>I could only think of 9, but &quot;10 Tips&quot; seemed more catchy!  :)</p>
+<article class="slide level-2" id="an-analogy">
+<h2>An Analogy</h2>
+<p>Let's build a tank.</p>
 
 </article>
 <article class="slide level-2" id="thanks-for-attending">
@@ -566,12 +219,6 @@ coverage by writing more test cases. Even if the increase is small, it is still 
 <div class="line">Email: <a class="reference external" href="mailto:randy&#46;syring&#37;&#52;&#48;level12&#46;io">randy<span>&#46;</span>syring<span>&#64;</span>level12<span>&#46;</span>io</a></div>
 <div class="line"><a class="reference external" href="https://github.com/rsyring/">https://github.com/rsyring/</a></div>
 </div>
-<p>Image credits:</p>
-<ul class="simple">
-<li><a class="reference external" href="http://reqtest.com/testing-blog/you-cant-work-agile-without-automated-testing/">http://reqtest.com/testing-blog/you-cant-work-agile-without-automated-testing/</a></li>
-<li><a class="reference external" href="https://www.atlassian.com/agile/program">https://www.atlassian.com/agile/program</a></li>
-<li><a class="reference external" href="http://www.slideshare.net/lfingerman/test-automation-best-prcatices-with-soa-test-approach">http://www.slideshare.net/lfingerman/test-automation-best-prcatices-with-soa-test-approach</a></li>
-</ul>
 
 </article>
 
